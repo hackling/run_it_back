@@ -32,7 +32,7 @@ class RunItBack < RSpec::Core::Formatters::BaseTextFormatter
     end
 
     line_number_hash.map do |file_path, line_numbers|
-      "#{file_path}:{#{line_numbers.join(',')}}"
+      "#{file_path}:{#{line_numbers.uniq.join(',')}}"
     end.join(' ')
   end
 
