@@ -9,7 +9,7 @@ class RunItBack < RSpec::Core::Formatters::BaseTextFormatter
 
     return if summary.failed_examples.empty?
 
-    if summary.failed_examples.length <= 10
+    if summary.failed_examples.length.between?(2, 10)
       output.puts
       output.puts 'Rerun all failed examples:'
       output.puts
