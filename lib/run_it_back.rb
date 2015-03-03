@@ -32,7 +32,12 @@ class RunItBack < RSpec::Core::Formatters::BaseTextFormatter
     end
 
     line_number_hash.map do |file_path, line_numbers|
-      "#{file_path}:{#{line_numbers.uniq.join(',')}}"
+      line_numbers = line_numbers.uniq
+      if line_numbers.count > 1
+        "#{file_path}:{#{line_numbers.join(',')}}"
+      else
+        "#{file_path}:#{line_numbers.first}"
+      end
     end.join(' ')
   end
 
