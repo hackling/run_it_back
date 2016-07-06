@@ -9,5 +9,5 @@ Gem::Specification.new do |gem|
   gem.homepage    = 'http://github.com/hackling/run_it_back'
   gem.license     = 'MIT'
 
-  gem.add_dependency 'rspec', '~> 3.0'
+  gem.add_dependency 'rspec-core', '~> 3.0'
 end
